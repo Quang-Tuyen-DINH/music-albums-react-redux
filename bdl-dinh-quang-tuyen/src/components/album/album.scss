@@ -1,0 +1,76 @@
+a {
+  text-decoration: none !important;
+}
+
+.albumContainer {
+  width: 170px;
+  margin: 14px;
+  position: relative;
+  display: block;
+}
+
+.albumContainer:hover {
+  -webkit-transform: scale(1.04);
+  transform: scale(1.04);
+  transition: all 0.4s;
+}
+
+.albumImg {
+  border-radius: 5%;
+  margin: 0 0 7px 0;
+  transition-duration: 0.4s;
+}
+
+.albumIcons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.heartIcon {
+  fill: #fff;
+  width: 30px;
+  height: 30px;
+  margin: 70px 0 0 0;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.heartBg {
+  width: 60px;
+  height: 60px;
+  margin: 53px 0 0 0;
+  opacity: 50%;
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+}
+
+.albumName {
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  margin: 0 0 2px 0;
+  display: inline-block;
+  transition-duration: 0.4s;
+}
+
+.albumName:hover {
+  color: #FA2D48;
+}
+
+.artistName {
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  display: block;
+  transition-duration: 0.4s;
+}
+
+.artistName:hover {
+  color: #FA2D48;
+}

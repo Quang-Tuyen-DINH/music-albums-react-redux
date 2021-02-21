@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import AlbumList from "./container/albumList/albumList"
+import AlbumList from "./container/albumList/albumList";
 
 function App() {
   return (
