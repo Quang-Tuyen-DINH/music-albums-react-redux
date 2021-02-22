@@ -1,22 +1,29 @@
-#listHeader {
-  position: fixed;
-  z-index: 2;
+html {
+  overflow:   scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#albumList {
+  height: 100%;
   width: 82%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
 }
 
-#listTitle {
-  text-align: center;
-  font-size: 35px;
-  padding: 30px 0;
-  color: #fff;
-  background-color: black;
-}
-
-#listContainer {
-  padding: 100px 0 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+#sidebar {
+  height: 100%;
+  width: 18%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
 }
 
 /* ----------- Phones ----------- */
@@ -24,11 +31,11 @@
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    #listHeader {
+    #sidebar {
       width: 50%;
     }
-    #listTitle {
-      font-size: 20px;
+    #albumList {
+      width: 50%;
     }
 }
 
@@ -37,11 +44,11 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-    #listHeader {
-      width: 70%;
+    #sidebar {
+      width: 30%;
     }
-    #listTitle {
-      font-size: 30px;
+    #albumList {
+      width: 70%;
     }
 }
 
@@ -50,7 +57,10 @@
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
-    #listHeader {
+    #sidebar {
+      width: 18%;
+    }
+    #albumList {
       width: 82%;
     }
 }
@@ -61,7 +71,10 @@
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
-    #listHeader {
+    #sidebar {
+      width: 18%;
+    }
+    #albumList {
       width: 82%;
     }
 }

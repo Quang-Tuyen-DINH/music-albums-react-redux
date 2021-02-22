@@ -1,11 +1,17 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import AlbumList from "./container/albumList/albumList";
+import FavoriteList from "./container/favoriteList/favoriteList"
 
 function App() {
   return (
     <div className="App">
-      <AlbumList />
+      <div id="albumList">
+        <AlbumList />
+      </div>
+      <div id="sidebar">
+        <FavoriteList />
+      </div>
     </div>
   );
 }

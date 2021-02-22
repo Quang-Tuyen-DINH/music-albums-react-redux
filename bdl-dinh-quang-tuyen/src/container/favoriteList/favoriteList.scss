@@ -1,22 +1,23 @@
-#listHeader {
+#favoriteHeader {
   position: fixed;
   z-index: 2;
-  width: 82%;
+  width: 18%;
 }
 
-#listTitle {
+#favoriteTitle {
   text-align: center;
   font-size: 35px;
   padding: 30px 0;
   color: #fff;
-  background-color: black;
+  background-color: #111;
+  z-index: 2;
 }
-
-#listContainer {
+#favoriteContainer{
   padding: 100px 0 0 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  z-index: 1;
 }
 
 /* ----------- Phones ----------- */
@@ -24,10 +25,10 @@
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    #listHeader {
+    #favoriteHeader {
       width: 50%;
     }
-    #listTitle {
+    #favoriteTitle {
       font-size: 20px;
     }
 }
@@ -37,10 +38,10 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-    #listHeader {
-      width: 70%;
+    #favoriteHeader {
+      width: 30%;
     }
-    #listTitle {
+    #favoriteTitle {
       font-size: 30px;
     }
 }
@@ -50,8 +51,8 @@
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
-    #listHeader {
-      width: 82%;
+    #favoriteHeader {
+      width: 18%;
     }
 }
 
@@ -61,7 +62,7 @@
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
-    #listHeader {
-      width: 82%;
+    #favoriteHeader {
+      width: 18%;
     }
 }
