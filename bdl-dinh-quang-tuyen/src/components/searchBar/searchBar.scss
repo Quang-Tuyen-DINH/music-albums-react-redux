@@ -1,19 +1,27 @@
-#listHeader {
-  position: fixed;
-  z-index: 2;
-  width: 82%;
-}
-
-#listTitle {
+#inputBar {
+  padding: 120px 0 60px 0;
   text-align: center;
-  font-size: 35px;
-  padding: 30px 0;
-  color: #fff;
-  background-color: black;
 }
 
-#searchBar {
-  color: #fff;
+.searchTerm {
+  width: 40%;
+  height: 40px;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  color: black;
+  font-weight: 100;
+  font-size: 20px;
+}
+
+.searchTerm:focus{
+  color: #FA2D48;
+}
+
+#searchResult {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* ----------- Phones ----------- */
@@ -21,11 +29,10 @@
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    #listHeader {
-      width: 50%;
-    }
-    #listTitle {
-      font-size: 20px;
+    .searchTerm {
+      width: 100%;
+      height: 30px;
+      font-size: 14px;
     }
 }
 
@@ -34,11 +41,10 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-    #listHeader {
+    .searchTerm {
       width: 70%;
-    }
-    #listTitle {
-      font-size: 30px;
+      height: 30px;
+      font-size: 14px;
     }
 }
 
@@ -47,8 +53,10 @@
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
-    #listHeader {
-      width: 82%;
+    .searchTerm {
+      width: 40%;
+      height: 40px;
+      font-size: 20px;
     }
 }
 
@@ -58,7 +66,9 @@
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
-    #listHeader {
-      width: 82%;
+    .searchTerm {
+      width: 40%;
+      height: 40px;
+      font-size: 20px;
     }
 }

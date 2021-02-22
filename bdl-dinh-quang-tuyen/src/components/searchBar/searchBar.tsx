@@ -1,63 +1,47 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { fetchAlbumsData } from "../../model/albums";
+import Album from "../album/album";
+import AlbumDetails from "../../interfaces/albumDetails";
+import "./searchBar.scss"
 
-class searchBar extends React.Component {
-  state = {
-    filter: "",
-    data: [
-      {
-        fname: "Jayne",
-        lname: "Washington",
-        email: "jaynewashington@exposa.com",
-        gender: "female"
-      },
-      {
-        fname: "Peterson",
-        lname: "Dalton",
-        email: "petersondalton@exposa.com",
-        gender: "male"
-      },
-      {
-        fname: "Velazquez",
-        lname: "Calderon",
-        email: "velazquezcalderon@exposa.com",
-        gender: "male"
-      },
-      {
-        fname: "Norman",
-        lname: "Reed",
-        email: "normanreed@exposa.com",
-        gender: "male"
-      }
-    ]
+function SearchBar() {
+  const [albumsData, setData] = useState([]);
+  const [filter, setFilter] = useState("");
+
+  const fetchData = async() => {
+    await fetchAlbumsData().then((result) => {
+      setData(result);
+    })
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const handleChange = (event: any) => {
+    setFilter(event.target.value);
   };
+  const lowercasedFilter: string = filter.toLowerCase();
+  const filteredData: Array<AlbumDetails> = albumsData.filter((object: AlbumDetails) => {
+    return Object.keys(object).some((key: string) =>
+      object['title'].label.toString().toLowerCase().includes(lowercasedFilter)
+    );
+  });
 
-
-handleChange = (event: any) => {
-    this.setState({ filter: event.target.value });
-  };
-
-  render() {
-    const { filter, data } = this.state;
-    const lowercasedFilter = filter.toLowerCase();
-    const filteredData = data.filter((item: any) => {
-      return Object.keys(item).some(key =>
-        item[key].toLowerCase().includes(lowercasedFilter)
-      );
-    });
-
-    return (
-      <div>
-        <input value={filter} onChange={this.handleChange} />
-        {filteredData.map(item => (
-          <div key={item.email}>
-            <div>
-              {item.fname} {item.lname} - {item.gender} - {item.email}
-            </div>
-          </div>
+  return (
+    <div>
+      <div className="wrap">
+        <div id="inputBar">
+          <input type="text" className="searchTerm" value={filter} onChange={handleChange} placeholder="Type any songs or artists"/>
+        </div>
+      </div>
+      <div id="searchResult">
+        {filteredData.map((album: AlbumDetails) => (
+          <Album key={album.id.attributes['im:id']} album={album}/>
         ))}
       </div>
-    );
-  }
+    </div>
+  )
 }
 
-export default searchBar
+export default SearchBar
