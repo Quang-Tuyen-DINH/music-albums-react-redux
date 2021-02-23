@@ -32,7 +32,7 @@ function SearchBar() {
     <div>
       <div className="wrap">
         <div id="inputBar">
-          <input type="text" className="searchTerm" value={filter} onChange={handleChange} placeholder="Type any songs or artists"/>
+          <input type="text" className="searchTerm" value={filter} onChange={handleChange} placeholder="Search"/>
         </div>
       </div>
       <div id="searchResult">

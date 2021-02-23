@@ -68,4 +68,4 @@ interface AlbumDetails {
   };
 }
 
-export default AlbumDetails
+export default AlbumDetails;

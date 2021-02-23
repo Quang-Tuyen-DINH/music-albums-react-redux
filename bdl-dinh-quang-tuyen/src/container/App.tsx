@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
-import AlbumList from "./container/albumList/albumList";
-import FavoriteList from "./container/favoriteList/favoriteList"
+import AlbumList from "./albumList/albumList";
+import FavoriteList from "./favoriteList/favoriteList"
 
 function App() {
   return (

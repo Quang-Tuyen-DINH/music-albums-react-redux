@@ -1,0 +1,2 @@
+export const ADD_FVR_ALBUM = 'ADD_FVR_ALBUM';
+export const DELETE_FVR_ALBUM = 'DELETE_FVR_ALBUM';

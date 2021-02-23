@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AlbumDetails from "../../interfaces/albumDetails";
 import { Card } from 'react-bootstrap';
+import { addFvrAlbum, deleteFvrAlbum } from "../../store/actions"
 import "./album.scss"
 
 function Album(props: { album: AlbumDetails }) {
