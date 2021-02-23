@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { fetchAlbumsData } from "../../model/albums";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Album from "../../components/album/album";
 import AlbumDetails from "../../interfaces/albumDetails";
+import State from "../../interfaces/state"
 import "./favoriteList.scss";
 
 function FavoriteList() {
-  const [albumsData, setData] = useState([]);
-
-  const fetchData = async() => {
-    await fetchAlbumsData().then((result) => {
-      setData(result);
-    })
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
+  const fvrAlbums = useSelector((state: State) => state.fvrAlbums);
+  
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -23,8 +16,11 @@ function FavoriteList() {
         <h2 id="favoriteTitle">Favorites</h2>
       </div>
       <div id="favoriteContainer">
-        {albumsData.map((album: AlbumDetails) => (
-          <Album key={album.id.attributes['im:id']} album={album}/>
+        {fvrAlbums.map((album: AlbumDetails) => (
+          <div>
+            <Album key={album.id.attributes['im:id']} album={album} fvrAlbums={fvrAlbums}/>
+				    <button type="button"  onClick={() => dispatch({ type:"DELETE_FVR_ALBUM", payload: album})}>Delete</button>
+          </div>
         ))}
       </div>
     </div>

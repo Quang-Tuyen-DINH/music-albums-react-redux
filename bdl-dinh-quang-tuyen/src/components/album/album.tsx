@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { useDispatch } from "react-redux";
 import AlbumDetails from "../../interfaces/albumDetails";
 import { Card } from 'react-bootstrap';
-import { addFvrAlbum, deleteFvrAlbum } from "../../store/actions"
 import "./album.scss"
 
-function Album(props: { album: AlbumDetails }) {
-	const albumId: string = props.album.id.label;
+function Album(props: { album: AlbumDetails, fvrAlbums: Array<AlbumDetails> }) {
+	const albumLabel: string = props.album.id.label;
 	const name: string = props.album['im:name'].label;
 	const artist: string = props.album['im:artist'].label;
 	const artistId: string = props.album['im:artist'].attributes?.href;
@@ -13,9 +13,7 @@ function Album(props: { album: AlbumDetails }) {
 
   const [isShown, setIsShown] = useState(false);
 
-	const handleClick = () => {
-		console.log('test')
-	}
+  const dispatch = useDispatch();
 
 	return (
 		<div>
@@ -24,24 +22,24 @@ function Album(props: { album: AlbumDetails }) {
 			onMouseLeave={() => setIsShown(false)}>
 				<div className="cardHeader">
 					{isShown && (
-						<div className="albumIcons">
-							<svg onClick={handleClick} className="heartIcon" viewBox="0 0 16 16">
+						<div className="albumIcons" onClick={() => dispatch({ type:"ADD_FVR_ALBUM", payload: props.album})}>
+							<svg className="heartIcon" viewBox="0 0 16 16">
 								<path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 							</svg>
 							<div className="heartBg"></div>
 						</div>
 					)}
-					<a href={albumId} target="_blank" rel="noopener noreferrer">
+					<a href={albumLabel} target="_blank" rel="noopener noreferrer">
 						<Card.Img variant="top" src={imgUrl} className="albumImg" />
 					</a>
 				</div>
 				<Card.Body>
-					<a href={albumId} target="_blank" rel="noopener noreferrer" className="albumName">{name}</a>
+					<a href={albumLabel} target="_blank" rel="noopener noreferrer" className="albumName">{name}</a>
 					<a href={artistId} target="_blank" rel="noopener noreferrer" className="artistName">{artist}</a>
 				</Card.Body>
 			</Card>
 		</div>
-	)
+	);
 }
 
-export default Album
+export default Album;

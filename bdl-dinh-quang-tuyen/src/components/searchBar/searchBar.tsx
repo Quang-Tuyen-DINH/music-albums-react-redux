@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { fetchAlbumsData } from "../../model/albums";
 import Album from "../album/album";
 import AlbumDetails from "../../interfaces/albumDetails";
+import State from "../../interfaces/state";
 import "./searchBar.scss"
 
 function SearchBar() {
@@ -28,6 +30,8 @@ function SearchBar() {
     );
   });
 
+  const fvrAlbums = useSelector((state: State) => state.fvrAlbums);
+
   return (
     <div>
       <div className="wrap">
@@ -37,7 +41,7 @@ function SearchBar() {
       </div>
       <div id="searchResult">
         {filteredData.map((album: AlbumDetails) => (
-          <Album key={album.id.attributes['im:id']} album={album}/>
+          <Album key={album.id.attributes['im:id']} album={album} fvrAlbums={fvrAlbums}/>
         ))}
       </div>
     </div>
