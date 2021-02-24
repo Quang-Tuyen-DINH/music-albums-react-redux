@@ -5,7 +5,7 @@ Getpro's new music website.
 Getpro is branching into the music business and they need a new responsive website. This website needs to display the top 100 songs based on the iTunes API.
 
 ## Structure
-The website is composed by 2 main parts: **container** and **components**. 
+The website is composed by 2 main parts: **container** and **components**, beside it uses data fetched from iTunes API which permit
  
 ## Screenshots
 ![Screenshot](./public/screenshot.jpg)
@@ -17,35 +17,18 @@ The website is composed by 2 main parts: **container** and **components**.
 - [Redux](https://redux.js.org/)
 - [Bootstrap](https://getbootstrap.com/)
 
+## API Reference
+[iTunes API](https://itunes.apple.com/us/rss/topalbums/limit=100/json)
+
 ## Features
 The websites permits to display a list of top 100 searchable albums, beside, user can add favorite album(s) by clicking the image of each album, then the favorite album(s) will be displayed on the left. User can also delete album(s) from favorite list by clicking on the image of the album.
 
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+## How to use
+In the terminal of the IDE, type:
+- `npm install`
+- `npm run start`
+- Open browser at `http://localhost:3000/`
 
-## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-Describe and show how to run the tests with code examples.
-
-## How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
-
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
-
-## Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project. 
-
-#### Anything else that seems useful
-
-## License
-A short snippet describing the license (MIT, Apache etc)
-
-MIT © [Yourname]()
+## Contact
+- Mail: quangtuyen.dinh.0403@gmail.com
+- Github : [Quang-Tuyen-DINH](https://github.com/Quang-Tuyen-DINH)
