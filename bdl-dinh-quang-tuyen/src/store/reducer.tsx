@@ -1,5 +1,5 @@
 import * as types from "./constants";
-import AlbumDetails from "../interfaces/albumDetails"
+import AlbumDetails from "../interfaces/albumDetails";
 
 const initialState = {
   fvrAlbums: []

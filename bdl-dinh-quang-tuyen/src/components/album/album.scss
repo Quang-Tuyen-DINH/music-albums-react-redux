@@ -4,7 +4,7 @@ a {
 
 .albumContainer {
   width: 170px;
-  margin: 14px;
+  margin: 14px 14px 8px 14px;
   position: relative;
   display: block;
 }
@@ -38,11 +38,23 @@ a {
   cursor: pointer;
 }
 
+.heartIconAdded {
+  fill: #FA2D48;
+  width: 30px;
+  height: 30px;
+  margin: 70px 0 0 0;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
 .heartBg {
   width: 60px;
   height: 60px;
   margin: 53px 0 0 0;
   opacity: 50%;
+  cursor: pointer;
   background-color: #000000;
   border-radius: 50%;
   display: inline-block;

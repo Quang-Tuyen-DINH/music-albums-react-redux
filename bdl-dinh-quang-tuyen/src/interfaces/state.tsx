@@ -1,4 +1,4 @@
-import AlbumDetails from "./albumDetails"
+import AlbumDetails from "./albumDetails";
 
 interface State {
   fvrAlbums: Array<AlbumDetails>

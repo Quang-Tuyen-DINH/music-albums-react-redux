@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import AlbumList from "./albumList/albumList";
-import FavoriteList from "./favoriteList/favoriteList"
+import FavoriteList from "./favoriteList/favoriteList";
 
 function App() {
   return (
@@ -14,6 +14,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

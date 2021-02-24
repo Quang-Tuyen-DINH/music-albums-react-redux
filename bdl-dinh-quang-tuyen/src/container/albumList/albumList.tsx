@@ -1,4 +1,4 @@
-import SearchBar from "../../components/searchBar/searchBar"
+import SearchBar from "../../components/searchBar/searchBar";
 import "./albumList.scss";
 
 function AlbumList() {
@@ -13,6 +13,6 @@ function AlbumList() {
       </div>
     </div>
   );
-}
+};
 
-export default AlbumList
+export default AlbumList;

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { fetchAlbumsData } from "../../model/albums";
 import Album from "../album/album";
 import AlbumDetails from "../../interfaces/albumDetails";
-import State from "../../interfaces/state";
-import "./searchBar.scss"
+import "./searchBar.scss";
 
 function SearchBar() {
   const [albumsData, setData] = useState([]);
@@ -14,11 +12,11 @@ function SearchBar() {
     await fetchAlbumsData().then((result) => {
       setData(result);
     })
-  }
+  };
 
   useEffect(() => {
     fetchData()
-  }, [])
+  }, []);
 
   const handleChange = (event: any) => {
     setFilter(event.target.value);
@@ -30,8 +28,6 @@ function SearchBar() {
     );
   });
 
-  const fvrAlbums = useSelector((state: State) => state.fvrAlbums);
-
   return (
     <div>
       <div className="wrap">
@@ -41,11 +37,11 @@ function SearchBar() {
       </div>
       <div id="searchResult">
         {filteredData.map((album: AlbumDetails) => (
-          <Album key={album.id.attributes['im:id']} album={album} fvrAlbums={fvrAlbums}/>
+          <Album key={album.id.attributes['im:id']} album={album} type={'ADD_FVR_ALBUM'}/>
         ))}
       </div>
     </div>
   )
-}
+};
 
-export default SearchBar
+export default SearchBar;

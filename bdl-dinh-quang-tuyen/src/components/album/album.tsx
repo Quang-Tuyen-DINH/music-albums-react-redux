@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import AlbumDetails from "../../interfaces/albumDetails";
 import { Card } from 'react-bootstrap';
-import "./album.scss"
+import "./album.scss";
 
-function Album(props: { album: AlbumDetails, fvrAlbums: Array<AlbumDetails> }) {
+function Album(props: { album: AlbumDetails, type: string}) {
 	const albumLabel: string = props.album.id.label;
 	const name: string = props.album['im:name'].label;
 	const artist: string = props.album['im:artist'].label;
@@ -22,7 +22,7 @@ function Album(props: { album: AlbumDetails, fvrAlbums: Array<AlbumDetails> }) {
 			onMouseLeave={() => setIsShown(false)}>
 				<div className="cardHeader">
 					{isShown && (
-						<div className="albumIcons" onClick={() => dispatch({ type:"ADD_FVR_ALBUM", payload: props.album})}>
+						<div className="albumIcons" onClick={() => dispatch({ type: props.type, payload: props.album})}>
 							<svg className="heartIcon" viewBox="0 0 16 16">
 								<path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 							</svg>
@@ -40,6 +40,6 @@ function Album(props: { album: AlbumDetails, fvrAlbums: Array<AlbumDetails> }) {
 			</Card>
 		</div>
 	);
-}
+};
 
 export default Album;
