@@ -1,43 +1,36 @@
-### Objective
+## Getpro music website
+Getpro's new music website.
 
-Getpro is branching into the music business and needs a new website. Build it using TypeScript and React.
+## Company's need
+Getpro is branching into the music business and they need a new responsive website. This website needs to display the top 100 songs based on the iTunes API.
 
-### Brief
+## Structure
+The website is composed by 2 main parts: 
+- **Containers**: The **App** is the global container which contains the **Album list** and the **Favorite list**.
+- **Components**: The **Album** permits to display album's details, meanwhile **Search bar** permits to search for albums.
+It uses data from model **Albums** whom fetches the iTunes API and returns an array of 100 objects.
+## Screenshots
+![Screenshot](./public/screenshot.jpg)
 
-In a fictional world, Getpro is branching into the music business and we need a new a website. This website needs to display the top 100 songs based on the iTunes API. This code challenge allows you to choose your own path and lets you flaunt your creative panache and technical skills along the way.
+## Tech/framework used
+<b>Built with</b>
+- [Typescript](https://www.typescriptlang.org/)
+- [ReactJS](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Bootstrap](https://getbootstrap.com/)
 
-### Tasks
+## API Reference
+[iTunes API](https://itunes.apple.com/us/rss/topalbums/limit=100/json)
 
--   Implement assignment using:
-    -   Language: **TypeScript**
-    -   Framework: **React**
--   Show top 100 albums based on the json feed here: `https://itunes.apple.com/us/rss/topalbums/limit=100/json`
--   Cross browser support (or graceful degradation)
--   A clean modern look and responsive design
--   A good user experience
--   Use a CSS Framework (Bootstrap, Foundation, Pure, etc.…)
--   Allow the top 100 to be searchable
--   Surprise us! Add a feature that you think would work well here (for instance, advanced search, integration with other API, a "Favorite" functionality)
-    -   Describe the feature in separate markdown file
+## Features
+The websites permits to display a list of top 100 searchable albums, beside, user can add favorite album(s) by clicking the image of each album, then the favorite album(s) will be displayed on the left. User can also delete album(s) from favorite list by clicking on the image of the album.
 
-### Deliverables
+## How to use
+In the terminal of the IDE, type:
+- `npm install`
+- `npm run start`
+- Open browser at `http://localhost:3000/`
 
-Make sure to include all source code in the repository. To make reviewing easier, include a fully built version of your assignment in a folder named **public**.
-
-### Evaluation Criteria
-
--   **TypeScript** best practices
--   We're looking for you to produce working code, with enough room to demonstrate how to structure components in a small program.
--   Show us your work through your commit history
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
--   Testing: is the system adequately tested?
-
-### CodeSubmit
-
-Please organize, design, test and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
-
-All the best and happy coding,
-
-The Getpro Team
+## Contact
+- Mail: quangtuyen.dinh.0403@gmail.com
+- Github : [Quang-Tuyen-DINH](https://github.com/Quang-Tuyen-DINH)
