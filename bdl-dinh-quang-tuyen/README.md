@@ -6,8 +6,8 @@ Getpro is branching into the music business and they need a new responsive websi
 
 ## Structure
 The website is composed by 2 main parts: 
-- **Containers**: The **App** is the global container which contains the **Album list** and the **Favorite list**
-- **Components**: The **Album** permits to display album's details, meanwhile **Search bar** permits to search for albums
+- **Containers**: The **App** is the global container which contains the **Album list** and the **Favorite list**.
+- **Components**: The **Album** permits to display album's details, meanwhile **Search bar** permits to search for albums.
 It uses data from model **Albums** whom fetches the iTunes API and returns an array of 100 objects.
 ## Screenshots
 ![Screenshot](./public/screenshot.jpg)
